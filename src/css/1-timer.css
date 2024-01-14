@@ -7,7 +7,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
 body {
   margin-top: 36px;
   margin-left: 156px;
@@ -26,7 +25,7 @@ input {
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
- 
+
 button {
   width: 75px;
   height: 40px;
@@ -38,7 +37,7 @@ button {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.04em; */
+  letter-spacing: 0.04em;
 }
 
 button:disabled {
@@ -47,17 +46,17 @@ button:disabled {
 }
 
 button:enabled {
-  background: #4E75FF;
-  color: #FFF;
+  background: #4e75ff;
+  color: #fff;
   cursor: pointer;
 }
 
 button:hover:enabled {
-  background: #6C8CFF;
-  color: #FFF;
+  background: #6c8cff;
+  color: #fff;
   cursor: pointer;
 }
- 
+
 .timer {
   display: flex;
   align-items: center;
@@ -91,5 +90,4 @@ button:hover:enabled {
   line-height: 1.5;
   text-transform: uppercase;
   text-align: center;
-
 }
