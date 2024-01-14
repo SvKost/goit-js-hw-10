@@ -38,27 +38,6 @@ const options = {
 
 flatpickr(dateTimePicker, options);
 
-function updateTimerInterface(
-  displayedDays,
-  displayedHours,
-  displayedMinutes,
-  displayedSeconds
-) {
-  daysElement.textContent = addLeadingZero(displayedDays);
-  hoursElement.textContent = addLeadingZero(displayedHours);
-  minutesElement.textContent = addLeadingZero(displayedMinutes);
-  secondsElement.textContent = addLeadingZero(displayedSeconds);
-}
-
-function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
-}
-
-function displayRemainingTime(elapsedTime) {
-  const { days, hours, minutes, seconds } = convertMs(elapsedTime);
-  updateTimerInterface(days, hours, minutes, seconds);
-}
-
 startButton.addEventListener('click', () => {
   startButton.disabled = true;
 
@@ -79,6 +58,27 @@ startButton.addEventListener('click', () => {
     }
   }, 1000);
 });
+
+function updateTimerInterface(
+  displayedDays,
+  displayedHours,
+  displayedMinutes,
+  displayedSeconds
+) {
+  daysElement.textContent = addLeadingZero(displayedDays);
+  hoursElement.textContent = addLeadingZero(displayedHours);
+  minutesElement.textContent = addLeadingZero(displayedMinutes);
+  secondsElement.textContent = addLeadingZero(displayedSeconds);
+}
+
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
+
+function displayRemainingTime(elapsedTime) {
+  const { days, hours, minutes, seconds } = convertMs(elapsedTime);
+  updateTimerInterface(days, hours, minutes, seconds);
+}
 
 function convertMs(ms) {
   const second = 1000;
