@@ -13,15 +13,15 @@ form.addEventListener('submit', event => {
 });
 
 function handleSubmitBtn(delay) {
-  const fullfilledBtnCheked = fullfilledBtn.checked;
-  const rejectedBtnCheked = rejectedBtn.checked;
+  const fullfilledBtnChecked = fullfilledBtn.checked;
+  const rejectedBtnChecked = rejectedBtn.checked;
 
   const promise = new Promise((resolve, reject) => {
-    if (fullfilledBtnCheked) {
+    if (fullfilledBtnChecked) {
       setTimeout(() => {
         resolve('fullfiled');
       }, delay);
-    } else if (rejectedBtnCheked) {
+    } else if (rejectedBtnChecked) {
       setTimeout(() => {
         reject('rejected');
       }, delay);
@@ -31,14 +31,18 @@ function handleSubmitBtn(delay) {
   promise.then(
     value => {
       iziToast.show({
-        title: 'Fullfiled',
+        title: '',
         message: `✅ Fulfilled promise in ${delay}ms`,
+        position: 'topRight',
+        color: 'green',
       });
     },
     error => {
       iziToast.show({
-        title: 'Rejected',
+        title: '',
         message: `❌ Rejected promise in ${delay}ms`,
+        position: 'topRight',
+        color: 'red',
       });
     }
   );
